@@ -23,8 +23,8 @@ conda install a3partitioner
 Alternatively, you can install from source:
 
 ```bash
-git clone https://github.com/yourusername/A3Partitioner
-cd A3Partitioner
+git clone https://github.com/DaanJansen94/a3partitioner
+cd a3partitioner
 pip install .
 ```
 
