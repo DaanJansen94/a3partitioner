@@ -6,7 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  path: ..
+  url: https://github.com/DaanJansen94/a3partitioner/archive/v{{ version }}.tar.gz
+  sha256: # We'll need to add this after you create a release
 
 build:
   number: 0
@@ -20,14 +21,13 @@ requirements:
     - setuptools
   run:
     - python >=3.6
-    - biopython
-    # Add any other runtime dependencies your package needs
+    - biopython >=1.80
 
 test:
-  imports:
-    - a3partitioner
   commands:
     - A3Partitioner --help
+  imports:
+    - a3partitioner
 
 about:
   home: https://github.com/DaanJansen94/a3partitioner
