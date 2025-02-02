@@ -14,7 +14,7 @@ setup(
     },
     author="Daan Jansen",
     author_email="jansendaan94@gmail.com",
-    description="A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments",
+    description="A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/DaanJansen94/a3partitioner",
