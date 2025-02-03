@@ -131,6 +131,99 @@ def create_initial_apobec_partition(sequences):
 
     return apobec_partition
 
+def create_partition(args):
+    # Read the input alignment
+    records = list(SeqIO.parse(args.input, "fasta"))
+    sequences = [str(record.seq) for record in records]
+    
+    if args.partition == 'apobec':
+        apobec_partition, _ = create_apobec_partition(sequences)
+        apobec_records = [
+            SeqRecord(Seq(seq), id=record.id, description=record.description)
+            for seq, record in zip(apobec_partition, records)
+        ]
+        SeqIO.write(apobec_records, args.output, "fasta")
+    
+    elif args.partition == 'non-apobec':
+        apobec_partition, _ = create_apobec_partition(sequences)
+        non_apobec_partition = create_non_apobec_partition(sequences, apobec_partition)
+        non_apobec_records = [
+            SeqRecord(Seq(seq), id=record.id, description=record.description)
+            for seq, record in zip(non_apobec_partition, records)
+        ]
+        SeqIO.write(non_apobec_records, args.output, "fasta")
+    
+    else:  # both
+        apobec_partition, _ = create_apobec_partition(sequences)
+        non_apobec_partition = create_non_apobec_partition(sequences, apobec_partition)
+        
+        # Write APOBEC partition
+        apobec_records = [
+            SeqRecord(Seq(seq), id=record.id, description=record.description)
+            for seq, record in zip(apobec_partition, records)
+        ]
+        SeqIO.write(apobec_records, f"{args.output}_apobec.fasta", "fasta")
+        
+        # Write non-APOBEC partition
+        non_apobec_records = [
+            SeqRecord(Seq(seq), id=record.id, description=record.description)
+            for seq, record in zip(non_apobec_partition, records)
+        ]
+        SeqIO.write(non_apobec_records, f"{args.output}_non-apobec.fasta", "fasta")
+
+def get_apobec_sites(records):
+    # Get APOBEC motif positions
+    ref_seq = str(records[0].seq).upper()
+    apobec_positions = []
+    
+    # Find APOBEC motifs (GG, GA, GC, GT)
+    for i in range(len(ref_seq)):
+        if i < len(ref_seq) - 1:
+            dinuc = ref_seq[i:i+2]
+            if dinuc[0] == 'G':  # Any G-containing dinucleotide
+                apobec_positions.append(i)
+    
+    # Create new records with only APOBEC sites
+    apobec_records = []
+    for record in records:
+        seq = str(record.seq)
+        apobec_sites = ''.join(seq[i] for i in sorted(set(apobec_positions)))
+        new_record = SeqRecord(
+            Seq(apobec_sites),
+            id=record.id,
+            description=record.description
+        )
+        apobec_records.append(new_record)
+    
+    return apobec_records
+
+def get_non_apobec_sites(records):
+    # Get non-APOBEC positions
+    ref_seq = str(records[0].seq).upper()
+    non_apobec_positions = []
+    
+    # Find non-APOBEC positions (anything not starting with G)
+    for i in range(len(ref_seq)):
+        if i < len(ref_seq) - 1:
+            if ref_seq[i] != 'G':
+                non_apobec_positions.append(i)
+        else:
+            non_apobec_positions.append(i)
+    
+    # Create new records with only non-APOBEC sites
+    non_apobec_records = []
+    for record in records:
+        seq = str(record.seq)
+        non_apobec_sites = ''.join(seq[i] for i in non_apobec_positions)
+        new_record = SeqRecord(
+            Seq(non_apobec_sites),
+            id=record.id,
+            description=record.description
+        )
+        non_apobec_records.append(new_record)
+    
+    return non_apobec_records
+
 def main():
     # Prompt for input file
     while True:
