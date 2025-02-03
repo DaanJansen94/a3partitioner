@@ -7,17 +7,14 @@ A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from seque
 You can install A3Partitioner using conda. First, ensure you have the required channels:
 
 ```bash
-conda config --add channels defaults
 conda config --add channels bioconda
-conda config --add channels conda-forge
 ```
 
 Then install A3Partitioner:
 
 ```bash
-conda create -n a3partitioner
+conda create -n a3partitioner -c bioconda a3partitioner -y && 
 conda activate a3partitioner
-conda install a3partitioner
 ```
 
 Alternatively, you can install from source:
