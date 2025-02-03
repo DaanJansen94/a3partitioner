@@ -61,9 +61,9 @@ A3Partitioner -partition apobec -i input_aln.fasta -o output_aln.fasta
 A3Partitioner -partition non-apobec -i input_aln.fasta -o output_aln.fasta            
 ```
 
-2. Create both partitions and analysis:
+3. Create both partitions and analysis:
 ```bash
-A3Partitioner -partition both -i input_aln.fasta -o output_aln.fasta --analyze
+A3Partitioner -partition both -i input_aln.fasta -o output_aln.fasta
 ```
 
 ## Output Files
@@ -71,10 +71,6 @@ A3Partitioner -partition both -i input_aln.fasta -o output_aln.fasta --analyze
 When using `-partition both`, the tool will create:
 - `{output}_APOBEC3.fasta`: APOBEC3 partition
 - `{output}_non_APOBEC3.fasta`: non-APOBEC3 partition
-
-When using `--analyze`, additional files are created:
-- `{output}_motif_counts.txt`: APOBEC motif statistics
-- `{output}_APOBEC_conversions.txt`: Detailed APOBEC site analysis
 
 ## License
 
