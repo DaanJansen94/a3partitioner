@@ -2,6 +2,22 @@
 
 A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments.
 
+## Background
+Literature indicates that an overwhelming majority of mutations found in monkeypox viral genomes are a result of deaminase editing, which provides a distinct APOBEC3 signature in the genomes. When performing evolutionary analysis of MPXV on relatively short timescales, it is therefore unlikely that a significant number of non-APOBEC3 mutations, which arise from error-prone polymerases, will accumulate. Given this, one can extract the APOBEC3 partition from the nucleotide alignment and perform phylogenetic analysis with this partition to exclude bias from artificially introduced mutations (e.g., sequencing or bioinformatics errors).
+
+## How It Works
+This tool creates two distinct partitions from a nucleotide alignment:
+
+1. **APOBEC3 Partition:**
+   - Includes sites with putative APOBEC3 modifications (C → T or G → A substitutions in specific dinucleotide contexts)
+   - Contains fully conserved target sites (composed entirely of C or G)
+   - All other sites are masked as ambiguous nucleotides
+
+2. **Non-APOBEC3 Partition:**
+   - Contains all sites except those with APOBEC3 target sites
+   - APOBEC3 target sites are masked
+   - Serves as a complement to the first partition
+
 ## Installation
 
 ### Option 1: Using Conda
