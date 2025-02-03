@@ -8,7 +8,9 @@ A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from seque
 First, ensure you have the required channels:
 
 ```bash
+conda config --add channels defaults
 conda config --add channels bioconda
+conda config --add channels conda-forge
 ```
 
 Then install A3Partitioner:
