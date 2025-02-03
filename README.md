@@ -22,7 +22,7 @@ Alternatively, you can install from source:
 ```bash
 git clone https://github.com/DaanJansen94/a3partitioner
 cd a3partitioner
-install.sh
+./install.sh
 ```
 
 ## Usage
