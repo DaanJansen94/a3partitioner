@@ -47,7 +47,6 @@ cd a3partitioner
 - `-partition`: Type of partition to create [apobec, non-apobec, both]
 - `-i, --input`: Input FASTA alignment file
 - `-o, --output`: Output FASTA file
-- `--analyze`: Generate detailed APOBEC site analysis
 
 ### Examples
 
