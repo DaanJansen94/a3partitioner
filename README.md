@@ -13,7 +13,7 @@ conda config --add channels bioconda
 Then install A3Partitioner:
 
 ```bash
-conda create -n a3partitioner -c bioconda a3partitioner -y && 
+conda create -n a3partitioner -c bioconda a3partitioner -y 
 conda activate a3partitioner
 ```
 
