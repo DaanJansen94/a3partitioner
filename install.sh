@@ -9,8 +9,8 @@ if ! grep -q "export PATH=\"$INSTALL_DIR:\$PATH\"" ~/.bashrc; then
     echo "Added A3Partitioner directory to PATH"
 fi
 
-# Source .bashrc to apply changes immediately
-source ~/.bashrc
-
-echo "A3Partitioner has been installed and is ready to use!"
-echo "Try running: A3Partitioner --help"
+echo "A3Partitioner has been installed!"
+echo "Please run this command to complete installation:"
+echo "    source ~/.bashrc"
+echo ""
+echo "Then you can use 'A3Partitioner --help' from anywhere"
