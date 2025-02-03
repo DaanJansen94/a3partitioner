@@ -4,6 +4,7 @@ setup(
     name="a3partitioner",
     version="0.1.0",
     packages=find_packages(),
+    scripts=['bin/A3Partitioner'],
     install_requires=[
         "biopython>=1.80",
     ],
