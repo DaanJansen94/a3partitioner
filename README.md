@@ -30,12 +30,6 @@ pip install .
 
 ## Usage
 
-Basic usage:
-
-```bash
-A3Partitioner -partition apobec -i input.fasta -o output.fasta
-```
-
 ### Options
 
 - `-partition`: Type of partition to create [apobec, non-apobec, both]
@@ -47,12 +41,17 @@ A3Partitioner -partition apobec -i input.fasta -o output.fasta
 
 1. Create APOBEC3 partition:
 ```bash
-A3Partitioner -partition apobec -i AllGenomes_aln.fasta -o AllGenomes_aln_APOBEC3.fasta
+A3Partitioner -partition apobec -i input_aln.fasta -o output_aln.fasta
+```
+
+2. Create non-APOBEC partition:
+```bash
+A3Partitioner -partition non-apobec -i input_aln.fasta -o output_aln.fasta            
 ```
 
 2. Create both partitions and analysis:
 ```bash
-A3Partitioner -partition both -i AllGenomes_aln.fasta -o AllGenomes_aln --analyze
+A3Partitioner -partition both -i input_aln.fasta -o output_aln.fasta --analyze
 ```
 
 ## Output Files
