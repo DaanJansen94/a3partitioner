@@ -10,8 +10,8 @@ This tool creates two distinct partitions from a nucleotide alignment:
 
 1. **APOBEC3 Partition:**
    - Includes sites with putative APOBEC3 modifications (C → T or G → A substitutions in specific dinucleotide contexts)
-   - Contains fully conserved target sites (composed entirely of C or G)
    - All other sites are masked as ambiguous nucleotides
+   - Can be used as input for ML or Bayesian phylogenetic analyses, aiming to remove bias from artificially introduced mutations
 
 2. **Non-APOBEC3 Partition:**
    - Contains all sites except those with APOBEC3 target sites
