@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/DaanJansen94/a3partitioner/archive/v{{ version }}.tar.gz
-  sha456: f65f197005d2f807010fa120bbb8e2f5b460106bf76f165c475b375d42d390b2
+  sha256: f88e6776bd6feb440175879a3cbdcb6c297bafff23b5c5f6883d1c832b5596aa
 
 build:
   number: 0
