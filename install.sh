@@ -11,6 +11,6 @@ fi
 
 echo "A3Partitioner has been installed!"
 echo "Please run this command to complete installation:"
-echo "    source ~/.bashrc"
+echo "source ~/.bashrc"
 echo ""
 echo "Then you can use 'A3Partitioner --help' from anywhere"
