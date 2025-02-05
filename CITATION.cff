@@ -13,4 +13,5 @@ license: MIT
 doi: 10.XXXX/XXXXXX
 url: https://github.com/DaanJansen94/a3partitioner
 date-released: '2024-02-01'
+abstract: "A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments."
 " > CITATION.cff
