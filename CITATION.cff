@@ -11,4 +11,4 @@ doi: "10.5281/zenodo.14851870"
 title: 'a3partitioner: A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments'
 version: v0.1.0
 url: https://github.com/DaanJansen94/a3partitioner
-date-released: '2024-02-01'
+date-released: '2025-02-01'
