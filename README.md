@@ -89,6 +89,22 @@ When using `-partition both`, the tool will create:
 - `{output}_APOBEC3.fasta`: APOBEC3 partition
 - `{output}_non_APOBEC3.fasta`: non-APOBEC3 partition
 
+## Citation
+
+If you use EbolaSeq in your research, please cite:
+
+```
+Jansen, D., & Vercauteren, K. (2025). a3partitioner: A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments (Version v0.1.0) [Computer software]. https://doi.org/10.5281/zenodo.14851870
+```
+
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Support
+
+If you encounter any problems or have questions, please open an issue on GitHub.
