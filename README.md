@@ -1,6 +1,5 @@
 # A3Partitioner
-
-A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments.
+A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments. For generating a quick and reliable MPXV alignment for both clades, we refer to [squirrel](https://github.com/aineniamh/squirrel).
 
 ## Background
 Literature indicates that an overwhelming majority of mutations found in monkeypox viral genomes are a result of deaminase editing, which provides a distinct APOBEC3 signature in the genomes (doi: 10.1126/science.adg8116). When performing evolutionary analysis of MPXV on relatively short timescales, it is therefore unlikely that a significant number of non-APOBEC3 mutations, which arise from error-prone polymerases, will accumulate. Given this, one can extract the APOBEC3 partition from the nucleotide alignment and perform phylogenetic analysis with this partition to exclude bias from artificially introduced mutations (e.g., sequencing or bioinformatics errors).
