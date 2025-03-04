@@ -95,7 +95,6 @@ If you use EbolaSeq in your research, please cite:
 
 ```
 Jansen D, Vercauteren K. Jansen, D., & Vercauteren, K. (2025). a3partitioner: A bioinformatics tool for creating APOBEC3 and non-APOBEC3 partitions from sequence alignments (v.0.1.1). Zenodo. https://doi.org/10.5281/zenodo.14851870
-
 ```
 
 ## License
